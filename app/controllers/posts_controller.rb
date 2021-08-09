@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     @post = Post.new
   end
@@ -14,14 +15,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    if params[:category_id]
-      @category = Category.find(params[:category_id])
-      @posts = @category.posts.page(params[:page]).reverse_order.order(created_at: :desc)
-    else
+    # if params[:category_id]
+    #   @category = Category.find(params[:category_id])
+    #   @posts = @category.posts.page(params[:page]).reverse_order.order(created_at: :desc)
+    # else
       @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc)
-    end
+    # end
   end
-
 
   def show
     @post = Post.find(params[:id])
@@ -33,6 +33,10 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def category
+    @category = Category.find(params[:id])
+    @post = Post.includes(:categories).where(post_category_relations: { category_id: @category }).page(params[:page]).reverse_order.order(created_at: :desc)
+  end
    private
 
   def post_params
