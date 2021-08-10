@@ -14,3 +14,19 @@
  *= require_self
  */
  @import "bootstrap";
+ 
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ h1, h2 {
+ font-family: 'Oswald', sans-serif;
+// font-family: 'Roboto', sans-serif;
+ }
+ 
+ #title {
+  font-family: 'Roboto', sans-serif;
+  color: orange;
+ }
