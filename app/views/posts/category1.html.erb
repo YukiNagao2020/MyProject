@@ -1,17 +1,15 @@
-<div class="contents">
-  <div class="card_header">
-    <div class="card_header_title">
-      <p>Category: <%= @category.name %>.  <strong>No Poverty</strong></p>
+<div class="container">
+  <img src="/assets/Inverted-01.png">
+  <div class="card border-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body text-secondary">
+      <h5 class="card-title">Secondary card title</h5>
+      <%= render 'posts/samecategory', post: @post %>
     </div>
-    
-    <%= render 'posts/samecategory', post: @post %>
-    
-    
-    </div>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><p><%= paginate @post %></p></li>
-        </ul>
-      </nav>
   </div>
-
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><p><%= paginate @post %></p></li>
+      </ul>
+    </nav>
+</div>

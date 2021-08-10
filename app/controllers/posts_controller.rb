@@ -20,7 +20,8 @@ class PostsController < ApplicationController
     #   @posts = @category.posts.page(params[:page]).reverse_order.order(created_at: :desc)
     # else
       @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc)
-    # end
+  #     p @posts
+  #   end
   end
 
   def show

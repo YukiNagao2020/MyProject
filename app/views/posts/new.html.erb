@@ -5,8 +5,6 @@
        <div class="form-body p-4">
         <%= render 'posts/error', post: @post %>
           <%= form_with model: @post, local:true do |f| %>
-          
-            
             <%= f.label :title, 'Title' %><br>
             <%= f.text_field :title, class:"form-control" %>
             <%= f.label :body,'Contents of Activity' %><br>
